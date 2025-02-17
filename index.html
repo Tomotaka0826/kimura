@@ -1,31 +1,46 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="きむら調剤薬局は香川県高松市の調剤薬局です。処方箋受付、健康相談、在宅医療など、地域の皆様の健康をサポートしています。">
+    <meta name="keywords" content="調剤薬局,高松市,牟礼町,健康相談,処方箋">
     <title>きむら調剤薬局 - より健康に 地域と共に</title>
+    <link rel="canonical" href="https://kimura-pharmacy.com">
     <link rel="stylesheet" href="styles.css">
     <!-- スライダー用のSwiper.js -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- プリロード -->
+    <link rel="preload" href="logo.1.jpg" as="image">
+    <link rel="preload" href="styles.css" as="style">
 </head>
 <body>
-    <header>
+    <!-- スキップリンク -->
+    <a href="#main-content" class="skip-link">
+        メインコンテンツにスキップ
+    </a>
+
+    <header role="banner">
         <div class="header-top">
            
-            <div class="header-links">
-                <a href="tel:087-818-7520">TEL: 087-818-7520</a>
-                <a href="#access">営業時間 9:00〜18:00</a>
+            <div class="header-links" role="navigation" aria-label="ユーティリティナビゲーション">
+                <a href="tel:087-818-7520" aria-label="電話する">
+                    <span aria-hidden="true">TEL: </span>087-818-7520
+                </a>
+                <a href="#access">
+                    <span aria-label="営業時間">平日 9:00〜18:00</span>
+                </a>
             </div>
         </div>
         
         <div class="header-main">
            
-            <nav class="global-nav">
+            <nav class="global-nav" role="navigation" aria-label="メインナビゲーション">
                 <ul>
                     <li>
-                        <a href="#services">
-                            <img src="logo.1.jpg" alt="便利なサービス">
+                        <a href="#services" role="menuitem">
+                            <img src="logo.1.jpg" alt="" aria-hidden="true">
                             <span>便利なサービス</span>
                         </a>
                     </li>
@@ -82,15 +97,15 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content" role="main">
         <!-- メインビジュアルスライダー -->
-        <div class="swiper-container main-visual">
+        <div class="swiper-container main-visual" role="region" aria-label="お知らせスライダー">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="parmacy.4.jpg" alt="スライド1">
+                <div class="swiper-slide" role="group" aria-label="スライド1">
+                    <img src="parmacy.4.jpg" alt="薬局外観の写真">
                     <div class="slide-content">
-                        <h2>リクルートサイト リニューアルOPEN!</h2>
-                        <p>新しい仲間を募集中です。</p>
+                        <h2>Webサイト リニューアルOPEN!</h2>
+                        
                     </div>
                 </div>
                 <div class="swiper-slide">
@@ -115,17 +130,17 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <button class="swiper-button-prev" aria-label="前のスライド"></button>
+            <button class="swiper-button-next" aria-label="次のスライド"></button>
+            <div class="swiper-pagination" role="group" aria-label="スライドページネーション"></div>
         </div>
 
         <!-- 便利なサービス -->
-        <section id="services" class="services">
-            <h2 class="section-title">
-                <img src="logo.1.jpg" alt="ハートアイコン">
+        <section id="services" class="services" role="region" aria-labelledby="services-title">
+            <h2 id="services-title" class="section-title">
+                <img src="logo.1.jpg" alt="" aria-hidden="true">
                 便利なサービス
-                <span class="en">SERVICE</span>
+                <span class="en" aria-hidden="true">SERVICE</span>
             </h2>
             <div class="service-grid">
                 <a href="#line" class="service-item">
@@ -265,7 +280,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="gaikan.2.jpg" alt="きむら調剤薬局の外観">
+                    <img loading="lazy" src="gaikan.2.jpg" alt="きむら調剤薬局の外観">
                 </div>
             </div>
         </section>
@@ -449,67 +464,59 @@
         
     </main>
 
-    <footer class="footer">
+    <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-info">
                 <div class="footer-logo">
-                    <img src="logo.1.jpg" alt="きむら調剤薬局">
-                    <p>より健康に 地域と共に</p>
+                    <img src="logo.1.jpg" alt="きむら調剤薬局" width="80" height="80">
+                    <h3>きむら調剤薬局</h3>
                 </div>
-                <div class="footer-address">
-                    <p>〒761-0121</p>
-                    <p>香川県高松市牟礼町牟礼2099-2</p>
-                    <p>TEL: 087-818-7520</p>
-                    <p>営業時間: 平日 9:00〜18:00</p>
-                    <p>定休日: 日曜・祝日</p>
-                </div>
+                <address class="footer-address">
+                    <p>〒761-0121 香川県高松市牟礼町牟礼2099-2</p>
+                    <p>TEL: <a href="tel:087-818-7520">087-818-7520</a></p>
+                    <p>営業時間: 平日 9:00〜18:00（日曜・祝日休み）</p>
+                </address>
             </div>
-            
-            <div class="footer-nav">
-                <div class="footer-nav-column">
-                    <h3>診療案内</h3>
-                    <ul>
-                        <li><a href="#prescription">処方箋受付</a></li>
-                        <li><a href="#medicine">お薬情報</a></li>
-                        <li><a href="#consultation">健康相談</a></li>
-                        <li><a href="#delivery">お薬の配達</a></li>
-                    </ul>
-                </div>
-                <div class="footer-nav-column">
-                    <h3>サービス</h3>
-                    <ul>
-                        <li><a href="#line">LINE予約</a></li>
-                        <li><a href="#online">オンライン服薬指導</a></li>
-                        <li><a href="#drive">ドライブスルー</a></li>
-                        <li><a href="#notebook">電子お薬手帳</a></li>
-                    </ul>
-                </div>
-                <div class="footer-nav-column">
-                    <h3>薬局について</h3>
-                    <ul>
-                        <li><a href="#about">薬局案内</a></li>
-                        <li><a href="#access">アクセス</a></li>
-                        <li><a href="#staff">スタッフ紹介</a></li>
-                        <li><a href="#recruit">採用情報</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="footer-links">
-                <a href="#privacy">プライバシーポリシー</a>
-                <a href="#terms">利用規約</a>
-                <a href="#sitemap">サイトマップ</a>
-                <a href="#contact">お問い合わせ</a>
-            </div>
-            <p class="copyright">&copy; 2024 きむら調剤薬局 All Rights Reserved.</p>
+            <p class="copyright">&copy; 2025 きむら調剤薬局 All Rights Reserved.</p>
         </div>
     </footer>
 
     <!-- トップに戻るボタン -->
-    <button id="to-top" class="to-top-button">
-        <i class="fas fa-arrow-up"></i>
+    <button id="to-top" class="to-top-button" aria-label="ページトップへ戻る">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
+
+    <div class="cookie-consent" id="cookieConsent">
+        <p>当サイトではCookieを使用しています。</p>
+        <div class="cookie-buttons">
+            <button class="accept-cookies">同意する</button>
+            <a href="#privacy">詳細を見る</a>
+        </div>
+    </div>
+
+    <style>
+    .cookie-consent {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 15px;
+        text-align: center;
+        backdrop-filter: blur(5px);
+    }
+
+    .cookie-buttons {
+        margin-top: 10px;
+    }
+
+    .accept-cookies {
+        background: #4CAF50;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+    }
+    </style>
 </body>
 </html> 
